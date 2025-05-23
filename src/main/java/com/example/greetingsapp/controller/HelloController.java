@@ -38,4 +38,9 @@ public class HelloController {
     public GreetingResponse sayHelloPut(@PathVariable String firstName, @RequestParam String lastName) {
         return greetingService.getGreetingByPut(firstName, lastName);
     }
+    
+    @PostMapping("/personal")
+    public GreetingResponse getFlexibleGreeting(@RequestBody UserDTO user) {
+        return greetingService.getPersonalizedGreeting(user);
+    }
 }
